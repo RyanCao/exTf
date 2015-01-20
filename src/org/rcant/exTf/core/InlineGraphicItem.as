@@ -107,23 +107,6 @@ public class InlineGraphicItem {
         sp.graphics.endFill();
         changeGraphicStatus(READY);
         return sp;
-        /**
-         * by cqs 寻找可替代加载类 暂时先注释
-         */
-//        _promise = new LoaderDeferred();
-//        _promise.load(URLCode.encode(pictURLReq), ResFormat.LOADER, LoadLevel.ICON, false).completes(function (e:*) {
-//            setGraphic(_promise.data);
-//            okToUpdateHeightAndWidth = true;
-//            changeGraphicStatus(READY);
-//            if (graphic) {
-//                _measuredWidth = graphic.width;
-//                _measuredHeight = graphic.height;
-//                (graphic as InteractiveObject).mouseEnabled = false;
-//                (graphic as Sprite).mouseChildren = false;
-//                (graphic as Sprite).buttonMode = false;
-//                parent.addChild(graphic);
-//            }
-//        });
     }
 
     /**
@@ -318,7 +301,7 @@ public class InlineGraphicItem {
 
     public function set x(value:Number):void {
         _x = value;
-        if(_graphic){
+        if (_graphic) {
             setPromiseX();
         }
     }
@@ -330,7 +313,7 @@ public class InlineGraphicItem {
 
     public function set y(value:Number):void {
         _y = value;
-        if(_graphic){
+        if (_graphic) {
             setPromiseY();
         }
 

@@ -61,7 +61,7 @@ public class ExTextField extends Sprite {
     /**
      * 最多保留信息数
      */
-    private var _maxLine:int = 30;
+    private var _maxLine:int = 40;
 
     //当前文本的格式化规则
     protected var _textFormat:TextFormat;
@@ -466,6 +466,8 @@ public class ExTextField extends Sprite {
         var chatCounts:int = 0;
         var ypos:Number = 0;
         while (_text.numLines > _maxLine) {
+            if(_textHeights.length<1)
+                break;
             i = 0;
             while (i < _textHeights[0]) {
                 chatCounts += _text.getLineLength(i);
